@@ -4,7 +4,7 @@ import base64
 import hashlib
 
 
-envs: Dict[str, str] = {}
+envs = {}
 for key in ['confluence_url', 'confluence_username', 'confluence_token', 'confluence_space']:
     value = environ.get(f'INPUT_{key.upper()}')
     if not value:
