@@ -8,5 +8,4 @@ RUN pipenv install --system --deploy
 WORKDIR /action
 COPY ./src .
 
-ENTRYPOINT [ "python" ]
-CMD [ "/action/main.py" ]
+ENTRYPOINT [ "python", "/action/main.py" ]
