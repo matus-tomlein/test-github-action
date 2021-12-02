@@ -6,4 +6,5 @@ if not workspace:
 
 print("here")
 print(workspace)
+print(os.listdir(workspace))
 os.system(f'cd {workspace} && ls -lA')
