@@ -5,7 +5,7 @@ import hashlib
 
 
 envs: Dict[str, str] = {}
-for key in ['confluence_url', 'confluence_username', 'confluence_token']:
+for key in ['confluence_url', 'confluence_username', 'confluence_token', 'confluence_space']:
     value = environ.get(f'INPUT_{key.upper()}')
     if not value:
         raise Exception(f'Missing value for {key}')
@@ -75,7 +75,7 @@ def push_file_to_confluence(file_path, title, parent_title):
     )
 
 def push_content_to_confluence(content, folder, title, parent_title):
-    space = os.getenv('SPACE')
+    space = envs['confluence_space']
 
     updated_contents = content
     if parent_title is not None:

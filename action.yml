@@ -11,6 +11,9 @@ inputs:
   confluence_token:
     description: 'Token for the user'
     required: true
+  confluence_space:
+    description: 'Space on Confluence to use'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
