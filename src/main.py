@@ -6,7 +6,7 @@ import hashlib
 
 envs = {}
 for key in ['confluence_url', 'confluence_username', 'confluence_token', 'confluence_space']:
-    value = environ.get(f'INPUT_{key.upper()}')
+    value = os.environ.get(f'INPUT_{key.upper()}')
     if not value:
         raise Exception(f'Missing value for {key}')
     envs[key] = value
